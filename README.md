@@ -1,155 +1,155 @@
 # 🚀 AWS Three-Tier Multi-AZ Architecture
 
-## Overview
+## 📌 Overview
 
-This project demonstrates a production-style Three-Tier Architecture deployed on AWS following cloud best practices for High Availability, Scalability, and Security.
+This project demonstrates a production-style **AWS Three-Tier Architecture** designed for **high availability, scalability, and security**. The infrastructure spans **two Availability Zones** and uses an **Application Load Balancer**, **Auto Scaling Group**, and **Amazon RDS** to simulate a real-world enterprise deployment.
 
-The infrastructure spans **2 Availability Zones** and uses an **Application Load Balancer**, **Auto Scaling Group**, **Launch Templates**, and **Amazon RDS**.
-
----
-
-## Architecture
-
-> Add your architecture diagram here
-
-![Architecture](images/architecture.png)
+The application is deployed on EC2 instances in private subnets and automatically scales based on demand while remaining highly available.
 
 ---
 
-## AWS Services Used
+## 🔄 Architecture Flow
+
+```text
+Users
+   │
+   ▼
+Application Load Balancer
+   │
+   ▼
+Target Group
+   │
+   ▼
+Auto Scaling Group
+   │
+   ▼
+EC2 Web Servers (Private Subnets)
+   │
+   ▼
+Amazon RDS MySQL (Private Subnets)
+```
+
+---
+
+## ☁️ AWS Services Used
 
 - Amazon VPC
-- Public & Private Subnets
+- Public Subnets
+- Private Application Subnets
+- Private Database Subnets
 - Internet Gateway
 - NAT Gateway
 - Route Tables
 - Security Groups
-- EC2
+- Network ACLs
+- Amazon EC2
 - Launch Templates
 - Auto Scaling Group
-- Application Load Balancer
+- Application Load Balancer (ALB)
 - Target Group
 - Amazon RDS MySQL
 
 ---
 
-## Architecture Flow
+## ✨ Project Highlights
 
-```
-Internet
-      │
-      ▼
-Application Load Balancer
-      │
-      ▼
-Target Group
-      │
-      ▼
-Auto Scaling Group
-      │
- ┌───────────────┐
- │               │
-EC2 Instance   EC2 Instance
-      │
-      ▼
-Amazon RDS MySQL
-```
+- Designed and deployed a production-style AWS Three-Tier Architecture across two Availability Zones.
+- Built a custom Amazon VPC with public and private subnets.
+- Configured an Application Load Balancer to distribute incoming traffic.
+- Deployed EC2 instances using Launch Templates.
+- Implemented an Auto Scaling Group for automatic scaling and instance replacement.
+- Configured Amazon RDS MySQL in private database subnets.
+- Secured the infrastructure using Security Groups and Network ACLs.
+- Updated EC2 instances using Launch Template Versioning and Instance Refresh.
 
 ---
 
-## Features
+## 🏛️ Infrastructure Components
 
-- High Availability across 2 Availability Zones
-- Auto Scaling
+### Networking
+
+- Amazon VPC
+- Internet Gateway
+- NAT Gateway
+- Public Subnets
+- Private Application Subnets
+- Private Database Subnets
+- Route Tables
+
+### Compute
+
+- Amazon EC2
+- Launch Template
+- Auto Scaling Group
+
+### Load Balancing
+
 - Application Load Balancer
-- Private Database
-- Secure Security Groups
-- Launch Templates
-- Instance Refresh
+- Target Group
 - Health Checks
-- Target Group Routing
+
+### Database
+
+- Amazon RDS MySQL
 
 ---
 
-## Project Workflow
+## 🔒 Security
 
-1. Create VPC
-2. Create Public and Private Subnets
-3. Attach Internet Gateway
-4. Configure Route Tables
-5. Configure NAT Gateway
-6. Launch Web Server EC2
-7. Install Apache using User Data
-8. Create Launch Template
-9. Create Target Group
-10. Create Application Load Balancer
-11. Create Auto Scaling Group
-12. Configure Health Checks
-13. Test Load Balancer DNS
+- Security Groups configured as instance-level firewalls.
+- Network ACLs configured as subnet-level firewalls.
+- EC2 instances deployed in private subnets without public IP addresses.
+- Amazon RDS deployed in private database subnets.
+- Internet access for private instances provided through a NAT Gateway.
 
 ---
 
-## Project Screenshots
+## 🛠️ Skills Demonstrated
 
-### VPC
-
-![VPC](images/vpc.png)
-
-### Subnets
-
-![Subnets](images/subnets.png)
-
-### Route Tables
-
-![Route Tables](images/route-tables.png)
-
-### Security Groups
-
-![Security Groups](images/security-groups.png)
-
-### Launch Template
-
-![Launch Template](images/launch-template.png)
-
-### Target Group
-
-![Target Group](images/target-group.png)
-
-### Application Load Balancer
-
-![ALB](images/alb.png)
-
-### Auto Scaling Group
-
-![ASG](images/asg.png)
-
-### EC2 Instances
-
-![EC2](images/ec2.png)
-
-### Amazon RDS
-
-![RDS](images/rds.png)
-
-### Final Website
-
-![Website](images/final-website.png)
-
----
-
-## Skills Demonstrated
-
+- AWS Cloud Architecture
+- Amazon VPC
+- Amazon EC2
+- Auto Scaling
+- Application Load Balancing
+- Amazon RDS
 - AWS Networking
 - High Availability
-- Auto Scaling
-- Load Balancing
-- Amazon RDS
-- Security Groups
-- Launch Templates
 - Infrastructure Design
-- Cloud Architecture
+- Linux Administration
 
 ---
+
+## 📂 Repository Structure
+
+```text
+aws-three-tier-multi-az-architecture
+│
+├── README.md
+├── userdata.sh
+└── images/
+```
+
+---
+
+## 🎯 Outcome
+
+Successfully built and deployed a highly available AWS Three-Tier Architecture where:
+
+- Users access the application through an Application Load Balancer.
+- The Target Group routes traffic to healthy EC2 instances.
+- The Auto Scaling Group automatically launches and replaces EC2 instances.
+- Amazon RDS MySQL is deployed in private subnets for secure database access.
+- The infrastructure provides high availability, scalability, and secure network isolation.
+
+---
+
+## 👨‍💻 Author
+
+**Srinil Reddy**
+
+Cloud Engineer | AWS | Linux | Networking
+
+GitHub: https://github.com/SRINILREDDY
 
 ## Author
 
